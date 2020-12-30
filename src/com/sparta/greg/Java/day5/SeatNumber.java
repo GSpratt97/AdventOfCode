@@ -12,14 +12,10 @@ public class SeatNumber {
         loopBoardingPasses(ReadFile.boardingPasses);
         Collections.sort(seatIds);
         Iterator<Integer> iter = seatIds.iterator();
-//        System.out.println(seatIds.get(0));
         int value = seatIds.get(0);
         int currentValue = seatIds.get(0);
         while (iter.hasNext()) {
             currentValue = iter.next();
-
-//            System.out.print(currentValue + " ");
-//            System.out.println(value);
             value++;
             if (value == currentValue) {
                 return value-1;
@@ -27,12 +23,6 @@ public class SeatNumber {
         }
         return 1;
     }
-    // FBFBBFFRLR // r44c5 // 44 * 8 + 5 = 357
-    // seatId = (r * 8) + c
-
-    //BFFFBBFRRR: row 70, column 7, seat ID 567.
-    //FFFBBBFRRR: row 14, column 7, seat ID 119.
-    //BBFFBBFRLL: row 102, column 4, seat ID 820.
 
     public static void loopBoardingPasses(ArrayList<String> boardingPasses) {
         seatIds = new ArrayList<>();
@@ -41,7 +31,7 @@ public class SeatNumber {
         for (String boardingPass:boardingPasses) {
             String rowBinary = convertRowToBinary(boardingPass);
             String columnBinary = convertColumnToBinary(boardingPass);
-            int seatId = (getRow(rowBinary, i)*8)+getRow(columnBinary, i);
+            int seatId = (getRowOrColumn(rowBinary, i)*8)+getRowOrColumn(columnBinary, i);
             seatIds.add(seatId);
             if(seatId>largest){
                 largest = seatId;
@@ -60,7 +50,6 @@ public class SeatNumber {
                 binaryString += 1;
             }
         }
-//        System.out.println(binaryString);
         return binaryString;
     }
 
@@ -73,18 +62,15 @@ public class SeatNumber {
                 binaryString += 0;
             }
         }
-//        System.out.println(binaryString);
         return binaryString;
     }
 
 
-    public static int getRow(String example, int i){
+    public static int getRowOrColumn(String example, int i){
         int length = example.length();
         if (i == length - 1) {
             return example.charAt(i) - '0';
         }
-        return ((example.charAt(i) - '0') << (length-i-1)) + getRow(example, i+1);
+        return ((example.charAt(i) - '0') << (length-i-1)) + getRowOrColumn(example, i+1);
     }
-
-    public static void getColumn(){}
 }
