@@ -28,7 +28,7 @@ public class ReadFile {
             e.printStackTrace();
         }
 
-        System.out.println(passports.size());
+//        System.out.println(passports.size());
 
         return passports;
     }
