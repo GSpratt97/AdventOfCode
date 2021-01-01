@@ -10,8 +10,6 @@ public class GamesConsole {
 
     public static void instructions(String line) {
         ArrayList<Integer> vistedLines = new ArrayList<>();
-
-//        ReadFile.commands
         do {
             vistedLines.add(lineNumber);
 
@@ -35,7 +33,6 @@ public class GamesConsole {
     public static String noOperation(String line) {
         lineNumber++;
         line = ReadFile.commands.get(lineNumber);
-//        instructions(line);
         return line;
     }
 
@@ -44,15 +41,11 @@ public class GamesConsole {
         accumulator += Integer.parseInt(line.substring(4));
         line = ReadFile.commands.get(lineNumber);
         return line;
-//        System.out.println("Linenumber: "+lineNumber);
-//        System.out.println("Accumulator: "+accumulator);
     }
 
     public static String jump(String line) {
         lineNumber += Integer.parseInt(line.substring(4));
         line = ReadFile.commands.get(lineNumber);
         return line;
-//        System.out.println("Accumulator: "+accumulator);
-
     }
 }

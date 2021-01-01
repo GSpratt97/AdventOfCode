@@ -14,6 +14,6 @@ public class App {
         //jmp -4
         //acc +6
 
-        //204332 too high
+        // Answer part1: 1832
     }
 }
