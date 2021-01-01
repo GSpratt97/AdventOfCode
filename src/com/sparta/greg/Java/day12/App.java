@@ -1,8 +1,8 @@
-package com.sparta.greg.Java.day10;
+package com.sparta.greg.Java.day12;
 
 public class App {
     public static void main(String[] args) {
         ReadFile.readTXT();
-        Jolt.sortAdaptors();
+        Ship.part1();
     }
 }

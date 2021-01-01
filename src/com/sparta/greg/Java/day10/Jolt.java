@@ -6,7 +6,7 @@ import java.util.Collections;
 public class Jolt {
 
 
-    public static Integer[] sortAdaptors(int firstChoice, int secondChoice, int thirdChoice) {
+    public static Integer[] sortAdaptors() {
         Collections.sort(ReadFile.adaptors);
         ArrayList<Integer[]> combinations = new ArrayList<>();
 
@@ -16,14 +16,14 @@ public class Jolt {
         for (int i=0;i<ReadFile.adaptors.size();i++) {
 //            System.out.println(ReadFile.adaptors.get(i));
 
-            if (ReadFile.adaptors.get(i) - firstChoice == startingAdaptor) {
+            if (ReadFile.adaptors.get(i) - 1 == startingAdaptor) {
                 number1Jolt++;
                 startingAdaptor = ReadFile.adaptors.get(i);
-            } else if (ReadFile.adaptors.get(i) - secondChoice == startingAdaptor) {
+            } else if (ReadFile.adaptors.get(i) - 2 == startingAdaptor) {
                 number2Jolt++;
                 startingAdaptor = ReadFile.adaptors.get(i);
 
-            } else if (ReadFile.adaptors.get(i) - thirdChoice == startingAdaptor) {
+            } else if (ReadFile.adaptors.get(i) - 3 == startingAdaptor) {
                 number3Jolt++;
                 startingAdaptor = ReadFile.adaptors.get(i);
 
@@ -35,19 +35,14 @@ public class Jolt {
         System.out.println("Number of 2 jumps: " + number2Jolt);
         System.out.println("Number of 3 jumps: " + number3Jolt);
 
-        System.out.println("Sum: "+number1Jolt*number2Jolt*number3Jolt);;
+        System.out.println("Sum: "+number1Jolt*number3Jolt);;
         return array;
 
     }
 
     public static void part2(){
 
-            sortAdaptors(3,2,1);
-            sortAdaptors(3,1,2);
-            sortAdaptors(2,3,1);
-            sortAdaptors(2,1,3);
-            sortAdaptors(1,2,3);
-            sortAdaptors(1,3,2);
+
 
     }
 }
