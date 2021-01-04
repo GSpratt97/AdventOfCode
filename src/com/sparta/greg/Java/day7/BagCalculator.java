@@ -9,6 +9,7 @@ public class BagCalculator {
     public static int totalNumberOfBags = 0;
 
 
+    //Part 1
     public static void goldBags(){
         int goldBags = 0;
         for(String key:ReadFile.rules.keySet()) {
@@ -49,6 +50,8 @@ public class BagCalculator {
         return count > 0;
     }
 
+
+    // Part 2
     public static void counter(){
 //        for(String key:ReadFile.rules.keySet()) {
             System.out.println(gold);

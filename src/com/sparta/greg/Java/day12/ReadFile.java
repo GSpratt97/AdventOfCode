@@ -19,15 +19,10 @@ public class ReadFile {
         try {
             bufferedReader = new BufferedReader(new FileReader(path));
             while ((line = bufferedReader.readLine()) != null) {
-//                array[0] = Character.toString(line.charAt(0));
-//                array[1] = line.substring(1);
-
                 instructions.add(line);
-                System.out.println(line);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        System.out.println(Arrays.toString(array));
     }
 }
